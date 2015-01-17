@@ -1,6 +1,6 @@
 # Github user search
 
-Search and view users via the Github API.
+Search and view users via the Github API - http://tomcanter.github.io/user-finder/
 
 Built with
 
