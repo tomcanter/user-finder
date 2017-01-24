@@ -1,0 +1,6 @@
+exports[`when requesting users via a search term should dispatch a USER_SEARCH_REQUEST action 1`] = `
+Object {
+  "searchTerm": "tom",
+  "type": "USER_SEARCH_REQUEST",
+}
+`;
