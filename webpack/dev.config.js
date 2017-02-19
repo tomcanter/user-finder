@@ -9,7 +9,7 @@ module.exports = merge(baseConfig, {
     inline: true,
     contentBase: 'src',
     port: '3001',
-    publicPath: '/',
+    publicPath: '/user-finder/',
     historyApiFallback: true,
   },
 
