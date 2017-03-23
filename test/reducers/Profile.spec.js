@@ -34,7 +34,7 @@ describe('Reducer: profile', () => {
           cache: {},
         };
         const action = {
-          profile: {
+          payload: {
             login: 'tomcanter',
             name: 'Tom Canter',
           },
@@ -62,7 +62,7 @@ describe('Reducer: profile', () => {
           },
         };
         const action = {
-          profile: {login: 'tomcanter', test: 'foo'},
+          payload: {login: 'tomcanter', test: 'foo'},
           type: 'PROFILE_SUCCESS',
         };
         const afterState = profileReducer(beforeState, action);
