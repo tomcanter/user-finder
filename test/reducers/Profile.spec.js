@@ -1,6 +1,4 @@
-import profileReducer, {
-  getFromCache,
-} from 'reducers/Profile';
+import profileReducer from 'reducers/Profile';
 
 describe('Reducer: profile', () => {
 
@@ -26,52 +24,24 @@ describe('Reducer: profile', () => {
   });
 
   describe('when a profile request is successful', () => {
-    describe('and the request is not cached', () => {
-      it('should update the state with the userProfile and cache it', () => {
-        const beforeState = {
-          isPending: true,
-          userProfile: {},
-          cache: {},
-        };
-        const action = {
-          payload: {
-            login: 'tomcanter',
-            name: 'Tom Canter',
-          },
-          type: 'PROFILE_SUCCESS',
-        };
-        const afterState = profileReducer(beforeState, action);
+    it('should update the state with the userProfile and cache it', () => {
+      const beforeState = {
+        isPending: true,
+        userProfile: {},
+      };
+      const action = {
+        payload: {
+          login: 'tomcanter',
+          name: 'Tom Canter',
+        },
+        type: 'PROFILE_SUCCESS',
+      };
+      const afterState = profileReducer(beforeState, action);
 
-        expect(
-          afterState
-        ).toMatchSnapshot();
-        expect(afterState).not.toBe(beforeState);
-      });
-    });
-
-    describe('and the query is already cached', () => {
-      it('should not merge the cached query back into the cache again', () => {
-        const beforeState = {
-          error: null,
-          isPending: true,
-          userProfile: {
-            login: 'tomcanter',
-          },
-          cache: {
-            tomcanter: {login: 'tomcanter'},
-          },
-        };
-        const action = {
-          payload: {login: 'tomcanter', test: 'foo'},
-          type: 'PROFILE_SUCCESS',
-        };
-        const afterState = profileReducer(beforeState, action);
-
-        expect(
-          afterState
-        ).toMatchSnapshot();
-        expect(afterState).not.toBe(beforeState);
-      });
+      expect(
+        afterState
+      ).toMatchSnapshot();
+      expect(afterState).not.toBe(beforeState);
     });
   });
 
@@ -92,19 +62,6 @@ describe('Reducer: profile', () => {
         afterState
       ).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
-    });
-  });
-
-  describe('getFromCache selector', () => {
-    it('should return the cached value', () => {
-      const store = {
-        profile: {
-          cache: {
-            tom: {foo: 'bar'},
-          },
-        },
-      };
-      expect(getFromCache('tom')(store)).toEqual({foo: 'bar'});
     });
   });
 
