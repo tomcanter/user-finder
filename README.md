@@ -1,6 +1,6 @@
-# Github User Search [![Build Status](https://app.codeship.com/projects/290694.svg?branch=master)](https://app.codeship.com/projects/290694)
+# Github User Finder [![Build Status](https://app.codeship.com/projects/36d1a0e0-3da1-0136-ecdb-161825e9517a/status?branch=master)](https://app.codeship.com/projects/290694)
 
-Search and view users via the Github API - https://tomcanter.io/user-finder
+Search and view users via the Github API - https://tomcanter.uk/user-finder
 
 Requests are cached in session storage to limit the use of the API.
 

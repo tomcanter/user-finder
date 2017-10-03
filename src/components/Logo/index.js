@@ -22,7 +22,7 @@ export default function Logo() {
             width={24}
             height={24}
           />
-          GitHub User Search
+          GitHub User Finder
         </Link>
       </h1>
       <p className={css(styles.Logo_subTitle)}>

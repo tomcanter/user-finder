@@ -17,7 +17,7 @@ exports[`Component: Header should render 1`] = `
           onClick={[Function]}
         >
           <svg />
-          GitHub User Search
+          GitHub User Finder
         </a>
       </h1>
       <p

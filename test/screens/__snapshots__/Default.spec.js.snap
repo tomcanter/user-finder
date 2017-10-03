@@ -35,7 +35,7 @@ exports[`Screen: DefaultLayout when passed a component should render it in the d
                 onClick={[Function]}
               >
                 <svg />
-                GitHub User Search
+                GitHub User Finder
               </a>
             </h1>
             <p
