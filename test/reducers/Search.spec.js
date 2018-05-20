@@ -4,9 +4,7 @@ describe('Reducer: search', () => {
 
   describe('when passed no state', () => {
     it('should return the initial state', () => {
-      expect(
-        searchReducer(undefined, {})
-      ).toMatchSnapshot();
+      expect(searchReducer(undefined, {})).toMatchSnapshot();
     });
   });
 
@@ -17,9 +15,7 @@ describe('Reducer: search', () => {
       };
       const afterState = searchReducer(beforeState, {type: 'SEARCH_REQUEST'});
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
     });
   });
 
@@ -38,9 +34,7 @@ describe('Reducer: search', () => {
       };
       const afterState = searchReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });
@@ -61,9 +55,7 @@ describe('Reducer: search', () => {
       };
       const afterState = searchReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });

@@ -6,9 +6,7 @@ import {
 } from 'redux-saga/effects';
 import api from 'store/api';
 import {normalize} from 'normalizr';
-import {
-  repoSchema,
-} from 'store/schema';
+import {repoSchema} from 'store/schema';
 import {getReposFromCache} from 'store/reducers/Cache';
 
 function reposSuccessAction(data: Object, url: string, {fromCache = false} = {}) {

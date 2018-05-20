@@ -1,8 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StyleSheetTestUtils,
-} from 'aphrodite';
+import {StyleSheetTestUtils} from 'aphrodite';
 import Stats from 'components/Stats';
 
 describe('Component: Stats', () => {
@@ -20,11 +18,9 @@ describe('Component: Stats', () => {
       Foo: 'bar',
       Bla: 'yo',
     };
-    const component = renderer.create(
-      <Stats
-        stats={stats}
-      />
-    );
+    const component = renderer.create(<Stats
+      stats={stats}
+    />);
     expect(component).toMatchSnapshot();
   });
 

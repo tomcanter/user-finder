@@ -22,7 +22,7 @@ function saveState(state: Object) {
     const serialized = JSON.stringify(state);
     sessionStorage.setItem(CACHE_KEY, serialized);
   } catch (e) {
-    console.warn('There was an problem saving the state');
+    console.warn('There was an problem saving the state'); /* eslint-disable-line no-console */
   }
 }
 

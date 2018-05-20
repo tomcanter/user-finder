@@ -12,9 +12,7 @@ describe('Screen: SearchScreen', () => {
       },
     };
     const wrapper = shallow(<SearchScreen {...props} />);
-    expect(
-      wrapper.find(DocumentTitle).props().title
-    ).toEqual('tom - Page 1 - Github user finder');
+    expect(wrapper.find(DocumentTitle).props().title).toEqual('tom - Page 1 - Github user finder');
   });
 
   it('should pass match props and searchTerm to SearchResultsContainer', () => {

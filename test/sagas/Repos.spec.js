@@ -1,9 +1,5 @@
-import {
-  put,
-} from 'redux-saga/effects';
-import {
-  getRepos,
-} from 'store/sagas/Repos';
+import {put} from 'redux-saga/effects';
+import {getRepos} from 'store/sagas/Repos';
 
 describe('Saga: getRepos', () => {
 
@@ -34,24 +30,20 @@ describe('Saga: getRepos', () => {
     it('should pass the result to the success action and not call the API', () => {
       const generator = getRepos({payload: {url: 'repos.net'}});
       generator.next();
-      const successAction = generator.next(
-        {
-          result: [1, 2],
-          entities: {},
-        }
-      ).value;
+      const successAction = generator.next({
+        result: [1, 2],
+        entities: {},
+      }).value;
 
-      expect(successAction).toEqual(
-        put({
-          meta: {fromCache: true},
-          payload: {
-            entities: {},
-            result: [1, 2],
-            url: 'repos.net',
-          },
-          type: 'REPOS_SUCCESS',
-        })
-      );
+      expect(successAction).toEqual(put({
+        meta: {fromCache: true},
+        payload: {
+          entities: {},
+          result: [1, 2],
+          url: 'repos.net',
+        },
+        type: 'REPOS_SUCCESS',
+      }));
     });
   });
 

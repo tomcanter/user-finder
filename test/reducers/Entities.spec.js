@@ -4,9 +4,7 @@ describe('Reducer: entities', () => {
 
   describe('when passed no state', () => {
     it('should return the initial state', () => {
-      expect(
-        entitiesReducer(undefined, {})
-      ).toMatchSnapshot();
+      expect(entitiesReducer(undefined, {})).toMatchSnapshot();
     });
   });
 
@@ -30,9 +28,7 @@ describe('Reducer: entities', () => {
       };
       const afterState = entitiesReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });

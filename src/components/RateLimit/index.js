@@ -23,7 +23,9 @@ export function calculateRemainingColor(remaining: number, limit: number): strin
   return 'RateLimit_high';
 }
 
-export default function RateLimit({label, remaining, limit, reset}: Props) {
+export default function RateLimit({
+  label, remaining, limit, reset,
+}: Props) {
   const styleKey = calculateRemainingColor(remaining, limit);
   return (
     <p

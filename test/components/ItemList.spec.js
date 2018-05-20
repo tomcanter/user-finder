@@ -1,8 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StyleSheetTestUtils,
-} from 'aphrodite';
+import {StyleSheetTestUtils} from 'aphrodite';
 
 import ItemList from 'components/ItemList';
 
@@ -29,38 +27,32 @@ describe('Component: ItemList', () => {
         login: 'john',
       },
     };
-    const component = renderer.create(
-      <ItemList
-        entities={entities}
-        ids={[123, 456]}
-        isPending={false}
-        component={FakeComponent}
-      />
-    );
+    const component = renderer.create(<ItemList
+      entities={entities}
+      ids={[123, 456]}
+      isPending={false}
+      component={FakeComponent}
+    />);
     expect(component).toMatchSnapshot();
   });
 
   it('should display a message when no items exist', () => {
-    const component = renderer.create(
-      <ItemList
-        entities={{}}
-        ids={[]}
-        isPending={false}
-        component={FakeComponent}
-      />
-    );
+    const component = renderer.create(<ItemList
+      entities={{}}
+      ids={[]}
+      isPending={false}
+      component={FakeComponent}
+    />);
     expect(component).toMatchSnapshot();
   });
 
   it('should render a Loading component when isPending', () => {
-    const component = renderer.create(
-      <ItemList
-        entities={{}}
-        ids={[]}
-        isPending={true}
-        component={FakeComponent}
-      />
-    );
+    const component = renderer.create(<ItemList
+      entities={{}}
+      ids={[]}
+      isPending={true}
+      component={FakeComponent}
+    />);
     expect(component).toMatchSnapshot();
   });
 

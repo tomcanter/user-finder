@@ -1,18 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {StyleSheetTestUtils} from 'aphrodite';
-import {
-  StaticRouter as Router,
-} from 'react-router-dom';
+import {StaticRouter as Router} from 'react-router-dom';
 
 import SearchResults from 'components/SearchResults';
 
 function createComponent(props) {
-  return renderer.create(
-    <Router context={{}}>
-      <SearchResults {...props} />
-    </Router>
-  );
+  return renderer.create(<Router context={{}}>
+    <SearchResults {...props} />
+                         </Router>);
 }
 
 describe('Component: SearchResults', () => {

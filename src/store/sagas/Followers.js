@@ -6,9 +6,7 @@ import {
 } from 'redux-saga/effects';
 import api from 'store/api';
 import {normalize} from 'normalizr';
-import {
-  userSchema,
-} from 'store/schema';
+import {userSchema} from 'store/schema';
 import {getFollowersFromCache} from 'store/reducers/Cache';
 
 function followersSuccessAction(data: Object, url: string, {fromCache = false} = {}) {

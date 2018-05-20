@@ -13,9 +13,7 @@ describe('Screen: ProfileScreen', () => {
       },
     };
     const wrapper = shallow(<ProfileScreen {...props} />);
-    expect(
-      wrapper.find(DocumentTitle).props().title
-    ).toEqual('tomcanter\'s profile - Github user finder');
+    expect(wrapper.find(DocumentTitle).props().title).toEqual('tomcanter\'s profile - Github user finder');
   });
 
   it('should pass match props to ProfileContainer', () => {

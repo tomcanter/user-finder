@@ -4,9 +4,7 @@ describe('Reducer: followers', () => {
 
   describe('when passed no state', () => {
     it('should return the initial state', () => {
-      expect(
-        followersReducer(undefined, {})
-      ).toMatchSnapshot();
+      expect(followersReducer(undefined, {})).toMatchSnapshot();
     });
   });
 
@@ -17,9 +15,7 @@ describe('Reducer: followers', () => {
       };
       const afterState = followersReducer(beforeState, {type: 'FOLLOWERS_REQUEST'});
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
     });
   });
 
@@ -37,9 +33,7 @@ describe('Reducer: followers', () => {
       };
       const afterState = followersReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });
@@ -59,9 +53,7 @@ describe('Reducer: followers', () => {
       };
       const afterState = followersReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });

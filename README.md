@@ -20,7 +20,6 @@ Feel free to open issues for questions/improvements!
 * React Router
 * Redux
 * Redux saga
-* SUIT CSS
 * Webpack
 * lodash-fp
 * normalizr
@@ -43,6 +42,14 @@ sent along in any API calls to increase the limit:
 export USER_FINDER_OAUTH=<your token>
 yarnpkg run start
 ```
+## Screen Shots
+
+![Search View](docs/screenshot1.png)
+![Profile View](docs/screenshot2.png)
+
+## Architecture
+
+![Architecture](docs/architecture.svg)
 
 ## TODO
 

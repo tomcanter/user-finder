@@ -1,18 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StaticRouter as Router,
-} from 'react-router-dom';
+import {StaticRouter as Router} from 'react-router-dom';
 import {StyleSheetTestUtils} from 'aphrodite';
 
 import Pagination from 'components/Pagination';
 
 function createComponent(props) {
-  return renderer.create(
-    <Router context={{}}>
-      <Pagination {...props} />
-    </Router>
-  );
+  return renderer.create(<Router context={{}}>
+    <Pagination {...props} />
+                         </Router>);
 }
 
 describe('Component: Pagination', () => {

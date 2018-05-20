@@ -1,8 +1,6 @@
 // @flow
 
-import React, {
-  Component,
-} from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   css,
@@ -30,7 +28,7 @@ type Props = {
   public_repos: number,
 };
 
-export default class ProfileHeader extends Component {
+export default class ProfileHeader extends Component<Props> {
 
   props: Props;
 

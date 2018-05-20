@@ -4,9 +4,7 @@ describe('Reducer: profile', () => {
 
   describe('when passed no state', () => {
     it('should return the initial state', () => {
-      expect(
-        profileReducer(undefined, {})
-      ).toMatchSnapshot();
+      expect(profileReducer(undefined, {})).toMatchSnapshot();
     });
   });
 
@@ -17,9 +15,7 @@ describe('Reducer: profile', () => {
       };
       const afterState = profileReducer(beforeState, {type: 'PROFILE_REQUEST'});
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
     });
   });
 
@@ -38,9 +34,7 @@ describe('Reducer: profile', () => {
       };
       const afterState = profileReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });
@@ -60,9 +54,7 @@ describe('Reducer: profile', () => {
       };
       const afterState = profileReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });

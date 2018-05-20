@@ -1,6 +1,4 @@
-import {
-  mapStateToProps,
-} from 'containers/RateLimit/connect';
+import {mapStateToProps} from 'containers/RateLimit/connect';
 
 describe('RateLimitConnect: mapStateToProps', () => {
 

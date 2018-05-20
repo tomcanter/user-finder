@@ -1,11 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StyleSheetTestUtils,
-} from 'aphrodite';
-import {
-  StaticRouter as Router,
-} from 'react-router-dom';
+import {StyleSheetTestUtils} from 'aphrodite';
+import {StaticRouter as Router} from 'react-router-dom';
 
 import Logo from 'components/Logo';
 
@@ -20,11 +16,9 @@ describe('Component: Logo', () => {
   });
 
   it('should render', () => {
-    const component = renderer.create(
-      <Router context={{}}>
-        <Logo />
-      </Router>
-    );
+    const component = renderer.create(<Router context={{}}>
+      <Logo />
+                                      </Router>);
     expect(component).toMatchSnapshot();
   });
 

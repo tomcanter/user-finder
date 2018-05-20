@@ -1,11 +1,7 @@
-import {
-  call,
-} from 'redux-saga/effects';
+import {call} from 'redux-saga/effects';
 import {isFSA} from 'flux-standard-action';
 import api from 'store/api';
-import {
-  searchUsers,
-} from 'store/sagas/Search';
+import {searchUsers} from 'store/sagas/Search';
 
 describe('Saga: searchUsers', () => {
 
@@ -30,16 +26,18 @@ describe('Saga: searchUsers', () => {
       const generator = searchUsers({payload: {search: 'q=tom'}});
       generator.next();
       const apiCall = generator.next().value;
-      expect(apiCall).toEqual(
-        call(api.searchUsers, {q: 'tom'})
-      );
+      expect(apiCall).toEqual(call(api.searchUsers, {q: 'tom'}));
 
       const response = {
         pagination: null,
         total_count: 2,
         items: [
-          {id: 123, avatar_url: 'foo', login: 'alecrust', type: 'User'},
-          {id: 456, avatar_url: 'foo', login: 'tomcanter', type: 'User'},
+          {
+            id: 123, avatar_url: 'foo', login: 'alecrust', type: 'User',
+          },
+          {
+            id: 456, avatar_url: 'foo', login: 'tomcanter', type: 'User',
+          },
         ],
       };
       const successAction = generator.next(response).value;

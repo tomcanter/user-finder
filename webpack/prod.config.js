@@ -37,8 +37,10 @@ module.exports = merge(baseConfig, {
     new ExtractTextPlugin('[name].bundle.[chunkhash].css'),
     // Minify JS
     new UglifyJsPlugin({
-      sourceMap: false,
-      compress: true,
+      sourceMap: true,
+      uglifyOptions: {
+        compress: false,
+      },
     }),
     // Minify CSS
     new webpack.LoaderOptionsPlugin({

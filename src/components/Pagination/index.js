@@ -23,7 +23,9 @@ const getSearchQuery = flow(
   first
 );
 
-function renderLink({url, extraClassName, rel, text, icon: Icon}: Object) {
+function renderLink({
+  url, extraClassName, rel, text, icon: Icon,
+}: Object) {
   if (!url) {return null;}
   const search = getSearchQuery(url);
 

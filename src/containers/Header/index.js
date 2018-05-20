@@ -1,11 +1,7 @@
 // @flow
 
-import React, {
-  Component,
-} from 'react';
-import {
-  StyleSheet,
-} from 'aphrodite/no-important';
+import React, {Component} from 'react';
+import {StyleSheet} from 'aphrodite/no-important';
 import Header from 'components/Header';
 import Container from 'components/Container';
 import connect from './connect';
@@ -17,7 +13,7 @@ type Props = {
   searchForUser: Function,
 };
 
-export class HeaderContainer extends Component {
+export class HeaderContainer extends Component<Props> {
 
   static defaultProps = {
     searchTerm: '',

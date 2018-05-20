@@ -1,6 +1,4 @@
-import React, {
-  Component,
-} from 'react';
+import React, {Component} from 'react';
 import get from 'lodash/fp/get';
 import {
   css,

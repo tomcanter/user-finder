@@ -1,8 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StyleSheetTestUtils,
-} from 'aphrodite';
+import {StyleSheetTestUtils} from 'aphrodite';
 import Avatar from 'components/Avatar';
 
 describe('Component: Avatar', () => {
@@ -16,13 +14,11 @@ describe('Component: Avatar', () => {
   });
 
   it('should render', () => {
-    const component = renderer.create(
-      <Avatar
-        url="http://avatar.net"
-        name="Tom"
-        width={300}
-      />
-    );
+    const component = renderer.create(<Avatar
+      url="http://avatar.net"
+      name="Tom"
+      width={300}
+    />);
     expect(component).toMatchSnapshot();
   });
 

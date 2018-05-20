@@ -16,15 +16,13 @@ describe('Component: SearchResultsContainer', () => {
 
   describe('when the searchTerm is falsey', () => {
     it('should not render the pagination or results', () => {
-      const component = renderer.create(
-        <SearchResultsContainer
-          isPending={true}
-          searchTerm={''}
-          userEntities={{}}
-          userIds={[]}
-          totalResults={0}
-        />
-      );
+      const component = renderer.create(<SearchResultsContainer
+        isPending={true}
+        searchTerm=""
+        userEntities={{}}
+        userIds={[]}
+        totalResults={0}
+      />);
       expect(component).toMatchSnapshot();
     });
   });

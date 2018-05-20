@@ -6,7 +6,7 @@ import {watchGetRepos} from './Repos';
 import {watchGetFollowers} from './Followers';
 import {watchGetRateLimit} from './RateLimit';
 
-export default function* rootSaga() {
+export default function* rootSaga(): Generator<IOEffect, *, *> {
   yield [
     watchSearchUsers(),
     watchGetProfile(),

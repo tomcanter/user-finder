@@ -1,27 +1,19 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StyleSheetTestUtils,
-} from 'aphrodite';
+import {StyleSheetTestUtils} from 'aphrodite';
 import {Provider} from 'react-redux';
-import {
-  StaticRouter as Router,
-} from 'react-router-dom';
+import {StaticRouter as Router} from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
-import DefaultLayout, {
-  pushUrlQuery,
-} from 'screens/Default';
+import DefaultLayout, {pushUrlQuery} from 'screens/Default';
 
 function createComponent(component) {
   const mockStore = configureMockStore();
   const store = mockStore();
-  return renderer.create(
-    <Provider store={store}>
-      <Router context={{}}>
-        {component}
-      </Router>
-    </Provider>
-  ).toJSON();
+  return renderer.create(<Provider store={store}>
+    <Router context={{}}>
+      {component}
+    </Router>
+                         </Provider>).toJSON();
 }
 
 describe('Screen: DefaultLayout', () => {

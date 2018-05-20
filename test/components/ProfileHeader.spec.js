@@ -1,8 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StyleSheetTestUtils,
-} from 'aphrodite';
+import {StyleSheetTestUtils} from 'aphrodite';
 import ProfileHeader from 'components/ProfileHeader';
 
 describe('Component: ProfileHeader', () => {
@@ -30,9 +28,7 @@ describe('Component: ProfileHeader', () => {
       id: 123,
       public_repos: 12,
     };
-    const component = renderer.create(
-      <ProfileHeader {...props} />
-    );
+    const component = renderer.create(<ProfileHeader {...props} />);
     expect(component).toMatchSnapshot();
   });
 

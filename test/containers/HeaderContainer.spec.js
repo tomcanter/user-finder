@@ -17,13 +17,11 @@ describe('Component: HeaderContainer', () => {
   describe('when the searchQuery prop is not present', () => {
     it('should not call the search action', () => {
       const spy = jest.fn();
-      shallow(
-        <HeaderContainer
-          searchQuery={''}
-          searchForUser={spy}
-          onSubmit={jest.fn()}
-        />
-      );
+      shallow(<HeaderContainer
+        searchQuery=""
+        searchForUser={spy}
+        onSubmit={jest.fn()}
+      />);
       expect(spy).not.toHaveBeenCalled();
     });
   });
@@ -31,13 +29,11 @@ describe('Component: HeaderContainer', () => {
   describe('when the searchQuery prop is present', () => {
     it('should call the search action', () => {
       const spy = jest.fn();
-      shallow(
-        <HeaderContainer
-          searchQuery={'?q=test'}
-          searchForUser={spy}
-          onSubmit={jest.fn()}
-        />
-      );
+      shallow(<HeaderContainer
+        searchQuery="?q=test"
+        searchForUser={spy}
+        onSubmit={jest.fn()}
+      />);
       expect(spy.mock.calls[0]).toMatchSnapshot();
     });
   });
@@ -45,13 +41,11 @@ describe('Component: HeaderContainer', () => {
   describe('when the searchQuery prop changes', () => {
     it('should call the search action with the new value', () => {
       const spy = jest.fn();
-      const wrapper = shallow(
-        <HeaderContainer
-          searchQuery={'?q=test'}
-          searchForUser={spy}
-          onSubmit={jest.fn()}
-        />
-      );
+      const wrapper = shallow(<HeaderContainer
+        searchQuery="?q=test"
+        searchForUser={spy}
+        onSubmit={jest.fn()}
+      />);
       expect(spy.mock.calls[0]).toMatchSnapshot();
       wrapper.setProps({searchQuery: '?q=foobar'});
       expect(spy.mock.calls[1]).toMatchSnapshot();

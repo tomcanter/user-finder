@@ -30,12 +30,10 @@ describe('Component: SearchForm', () => {
 
   describe('when a different initialInputValue is set', () => {
     it('should update the state', () => {
-      const wrapper = shallow(
-        <SearchForm
-          initialInputValue={'hello'}
-          onSubmit={jest.fn()}
-        />
-      );
+      const wrapper = shallow(<SearchForm
+        initialInputValue="hello"
+        onSubmit={jest.fn()}
+      />);
       expect(wrapper.state('inputValue')).toEqual('hello');
       wrapper.setProps({
         initialInputValue: 'foo',
@@ -48,11 +46,9 @@ describe('Component: SearchForm', () => {
     describe('and the state has an input value', () => {
       it('should pass the value to the onSubmit function', () => {
         const spy = jest.fn();
-        const wrapper = shallow(
-          <SearchForm
-            onSubmit={spy}
-          />
-        );
+        const wrapper = shallow(<SearchForm
+          onSubmit={spy}
+        />);
         wrapper.setState({inputValue: 'test'});
         wrapper.simulate('submit', {preventDefault: f => f});
         expect(spy.mock.calls[0]).toMatchSnapshot();
@@ -62,11 +58,9 @@ describe('Component: SearchForm', () => {
     describe('and the state has no inputValue', () => {
       it('should not call the onSubmit function', () => {
         const spy = jest.fn();
-        const wrapper = shallow(
-          <SearchForm
-            onSubmit={spy}
-          />
-        );
+        const wrapper = shallow(<SearchForm
+          onSubmit={spy}
+        />);
         wrapper.simulate('submit', {preventDefault: f => f});
         expect(spy).not.toHaveBeenCalled();
       });

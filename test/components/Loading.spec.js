@@ -1,8 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  StyleSheetTestUtils,
-} from 'aphrodite';
+import {StyleSheetTestUtils} from 'aphrodite';
 import Loading from 'components/Loading';
 
 describe('Component: Loading', () => {
@@ -16,9 +14,7 @@ describe('Component: Loading', () => {
   });
 
   it('should render', () => {
-    const component = renderer.create(
-      <Loading />
-    );
+    const component = renderer.create(<Loading />);
     expect(component).toMatchSnapshot();
   });
 

@@ -4,9 +4,7 @@ import {
 } from 'redux-saga/effects';
 import api from 'store/api';
 import {isFSA} from 'flux-standard-action';
-import {
-  getProfile,
-} from 'store/sagas/Profile';
+import {getProfile} from 'store/sagas/Profile';
 
 describe('Saga: getProfile', () => {
 
@@ -27,9 +25,7 @@ describe('Saga: getProfile', () => {
       const generator = getProfile({payload: {username: 'tomcanter'}});
       generator.next();
       const apiCall = generator.next().value;
-      expect(apiCall).toEqual(
-        call(api.getProfile, 'tomcanter')
-      );
+      expect(apiCall).toEqual(call(api.getProfile, 'tomcanter'));
       const response = {
         data: {
           login: 'tomcanter',
@@ -55,24 +51,20 @@ describe('Saga: getProfile', () => {
       generator.next(response);
 
       const repoRequestAction = generator.next().value;
-      expect(repoRequestAction).toEqual(
-        put({
-          type: 'REPOS_REQUEST',
-          payload: {
-            url: 'repos.net',
-          },
-        })
-      );
+      expect(repoRequestAction).toEqual(put({
+        type: 'REPOS_REQUEST',
+        payload: {
+          url: 'repos.net',
+        },
+      }));
 
       const followerRequestAction = generator.next().value;
-      expect(followerRequestAction).toEqual(
-        put({
-          type: 'FOLLOWERS_REQUEST',
-          payload: {
-            url: 'followers.net',
-          },
-        })
-      );
+      expect(followerRequestAction).toEqual(put({
+        type: 'FOLLOWERS_REQUEST',
+        payload: {
+          url: 'followers.net',
+        },
+      }));
     });
   });
 
@@ -82,13 +74,11 @@ describe('Saga: getProfile', () => {
       generator.next();
 
       const successAction = generator.next({foo: 'bar'}).value;
-      expect(successAction).toEqual(
-        put({
-          meta: {fromCache: true},
-          type: 'PROFILE_SUCCESS',
-          payload: {foo: 'bar'},
-        })
-      );
+      expect(successAction).toEqual(put({
+        meta: {fromCache: true},
+        type: 'PROFILE_SUCCESS',
+        payload: {foo: 'bar'},
+      }));
     });
 
     it('should request followers and repos with the cached values', () => {
@@ -98,24 +88,20 @@ describe('Saga: getProfile', () => {
       generator.next(tomProfile);
 
       const repoRequest = generator.next().value;
-      expect(repoRequest).toEqual(
-        put({
-          type: 'REPOS_REQUEST',
-          payload: {
-            url: 'test.net',
-          },
-        })
-      );
+      expect(repoRequest).toEqual(put({
+        type: 'REPOS_REQUEST',
+        payload: {
+          url: 'test.net',
+        },
+      }));
 
       const followerRequest = generator.next().value;
-      expect(followerRequest).toEqual(
-        put({
-          type: 'FOLLOWERS_REQUEST',
-          payload: {
-            url: 'foo.net',
-          },
-        })
-      );
+      expect(followerRequest).toEqual(put({
+        type: 'FOLLOWERS_REQUEST',
+        payload: {
+          url: 'foo.net',
+        },
+      }));
     });
   });
 

@@ -15,17 +15,15 @@ describe('Container: RateLimitContainer', () => {
   });
 
   it('should render', () => {
-    const component = renderer.create(
-      <RateLimitContainer
-        coreLimit={100}
-        coreRemaining={100}
-        coreReset="some date"
-        searchLimit={100}
-        searchRemaining={100}
-        dispatch={jest.fn()}
-        searchReset="some date"
-      />
-    );
+    const component = renderer.create(<RateLimitContainer
+      coreLimit={100}
+      coreRemaining={100}
+      coreReset="some date"
+      searchLimit={100}
+      searchRemaining={100}
+      dispatch={jest.fn()}
+      searchReset="some date"
+    />);
     expect(component).toMatchSnapshot();
   });
 

@@ -52,7 +52,7 @@ const renderRoute = curry((Component, matchProps) => {
   );
 });
 
-class DefaultLayout extends React.Component {
+class DefaultLayout extends React.Component<Props> {
 
   props: Props;
 

@@ -4,9 +4,7 @@ describe('Reducer: repos', () => {
 
   describe('when passed no state', () => {
     it('should return the initial state', () => {
-      expect(
-        reposReducer(undefined, {})
-      ).toMatchSnapshot();
+      expect(reposReducer(undefined, {})).toMatchSnapshot();
     });
   });
 
@@ -17,9 +15,7 @@ describe('Reducer: repos', () => {
       };
       const afterState = reposReducer(beforeState, {type: 'REPOS_REQUEST'});
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
     });
   });
 
@@ -37,9 +33,7 @@ describe('Reducer: repos', () => {
       };
       const afterState = reposReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });
@@ -59,9 +53,7 @@ describe('Reducer: repos', () => {
       };
       const afterState = reposReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });

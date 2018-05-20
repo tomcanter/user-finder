@@ -20,7 +20,9 @@ type addToCacheArgs = {
   data: any,
 };
 
-export function addToCache({state, cacheKey, type, data}: addToCacheArgs): Object {
+export function addToCache({
+  state, cacheKey, type, data,
+}: addToCacheArgs): Object {
   if (isUndefined(cacheKey) || state[type][cacheKey]) {
     return state;
   }

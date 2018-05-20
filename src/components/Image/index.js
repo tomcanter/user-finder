@@ -1,8 +1,6 @@
 // @flow
 
-import React, {
-  Component,
-} from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   css,
@@ -20,7 +18,7 @@ type State = {
   status: string,
 };
 
-class Image extends Component {
+class Image extends Component<Props, State> {
 
   props: Props;
   state: State;

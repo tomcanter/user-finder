@@ -1,9 +1,5 @@
-import {
-  getFollowers,
-} from 'store/sagas/Followers';
-import {
-  put,
-} from 'redux-saga/effects';
+import {getFollowers} from 'store/sagas/Followers';
+import {put} from 'redux-saga/effects';
 
 describe('Saga: getFollowers', () => {
 
@@ -34,24 +30,20 @@ describe('Saga: getFollowers', () => {
     it('should pass the result to the success action and not call the API', () => {
       const generator = getFollowers({payload: {url: 'followers.net'}});
       generator.next();
-      const successAction = generator.next(
-        {
-          result: [1, 2],
-          entities: {},
-        }
-      ).value;
+      const successAction = generator.next({
+        result: [1, 2],
+        entities: {},
+      }).value;
 
-      expect(successAction).toEqual(
-        put({
-          meta: {fromCache: true},
-          payload: {
-            entities: {},
-            result: [1, 2],
-            url: 'followers.net',
-          },
-          type: 'FOLLOWERS_SUCCESS',
-        })
-      );
+      expect(successAction).toEqual(put({
+        meta: {fromCache: true},
+        payload: {
+          entities: {},
+          result: [1, 2],
+          url: 'followers.net',
+        },
+        type: 'FOLLOWERS_SUCCESS',
+      }));
     });
   });
 

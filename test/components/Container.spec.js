@@ -18,11 +18,7 @@ describe('Component: Container', () => {
   });
 
   it('should render', () => {
-    const component = renderer.create(
-      <Container>
-        <div>inner component</div>
-      </Container>
-    );
+    const component = renderer.create(<Container><div>inner component</div></Container>);
     expect(component).toMatchSnapshot();
   });
 
@@ -30,11 +26,7 @@ describe('Component: Container', () => {
     const styles = StyleSheet.create({
       test: {color: 'red'},
     });
-    const component = renderer.create(
-      <Container extraStyle={styles.test}>
-        <div>inner component</div>
-      </Container>
-    );
+    const component = renderer.create(<Container extraStyle={styles.test}><div>inner component</div></Container>);
     expect(component).toMatchSnapshot();
   });
 

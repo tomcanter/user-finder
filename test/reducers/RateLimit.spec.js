@@ -4,9 +4,7 @@ describe('Reducer: rateLimit', () => {
 
   describe('when passed no state', () => {
     it('should return the initial state', () => {
-      expect(
-        rateLimitReducer(undefined, {})
-      ).toMatchSnapshot();
+      expect(rateLimitReducer(undefined, {})).toMatchSnapshot();
     });
   });
 
@@ -25,9 +23,7 @@ describe('Reducer: rateLimit', () => {
       };
       const afterState = rateLimitReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });
@@ -43,9 +39,7 @@ describe('Reducer: rateLimit', () => {
       };
       const afterState = rateLimitReducer(beforeState, action);
 
-      expect(
-        afterState
-      ).toMatchSnapshot();
+      expect(afterState).toMatchSnapshot();
       expect(afterState).not.toBe(beforeState);
     });
   });

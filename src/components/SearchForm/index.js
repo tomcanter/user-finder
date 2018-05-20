@@ -1,8 +1,6 @@
 // @flow
 
-import React, {
-  Component,
-} from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   css,
@@ -19,7 +17,7 @@ type State = {
   inputValue: string,
 };
 
-class SearchForm extends Component {
+class SearchForm extends Component<Props, State> {
 
   props: Props;
   state: State;
