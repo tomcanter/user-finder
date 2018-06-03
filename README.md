@@ -45,7 +45,6 @@ yarnpkg run start
 ## Screen Shots
 
 ![Search View](docs/screenshot1.png)
-![Profile View](docs/screenshot2.png)
 
 ## Architecture
 
